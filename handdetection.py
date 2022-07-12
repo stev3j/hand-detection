@@ -5,8 +5,7 @@ import numpy as np
 def handdetection():
 
     max_num_hands = 1
-    gesture = {0:'zero', 1:'one', 2:'two', 3:'three', 4:'four', 5:'five',
-                6:'six', 7:'seven', 8:'eight', 9:'nine'}
+    gesture = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9}
 
     # MediaPipe hands model
     mp_hands = mp.solutions.hands
@@ -64,9 +63,9 @@ def handdetection():
 
                 # Draw gesture result
                 if idx in gesture.keys():
-                    return gesture[idx].upper()
+                    return gesture[idx]
                   
-        cv2.imshow('Game', img)
+        cv2.imshow('frame', img)
 
 a = handdetection()
 print(a)
