@@ -65,13 +65,8 @@ def handdetection():
                 # Draw gesture result
                 if idx in gesture.keys():
                     return gesture[idx].upper()
-                    cv2.putText(img, text=gesture[idx].upper(), org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
-
-                mp_drawing.draw_landmarks(img, res, mp_hands.HAND_CONNECTIONS)
-
+                  
         cv2.imshow('Game', img)
-        if cv2.waitKey(1) == ord('q'):
-            break
 
 a = handdetection()
 print(a)
